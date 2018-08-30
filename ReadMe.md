@@ -1,0 +1,1 @@
+# Fast Food Fast - github pages landing page
