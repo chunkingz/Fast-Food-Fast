@@ -114,7 +114,9 @@ header a:hover {
 }
 
 #landing input[type="email"],
-input[type="password"] {
+input[type="password"],
+#landing input[type="text"],
+input[type="number"] {
     padding: 4px;
     height: 25px;
     width: 250px;
@@ -150,4 +152,9 @@ footer {
     color: #fff;
     background: #8b97db;
     text-align: center;
+}
+
+#meals h1[id="food-cat"] {
+    text-align: center;
+    color: #ff4081;
 }
