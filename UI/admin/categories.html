@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fast Food Fast | Admin - List Orders</title>
+    <title>Fast Food Fast | Categories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
     <script src="../js/main.js"></script>
@@ -22,37 +22,52 @@
             </div>
             <nav>
                 <ul>
-                    <li class="current"><a href="list_orders.html">Home</a></li>
-                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="list_orders.html">Home</a></li>
+                    <li class="current"><a href="categories.html">Categories</a></li>
                     <li><a href="../index.html">Log Out</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="landing">
-        <div class="container">
-            <h1>List Orders</h1>
-            <p>You can Accept, Decline, or mark as completed.</p>
+    <section id="id-add-new-cat">
+        <div class="class-add-new-cat">
+            <h3>Add new Category</h3>
+            <form action="categories.html" method="">
+                <input type="text" placeholder="Category name">
+                <button type="submit" class="btn-submit">Add</button>
+            </form>
         </div>
     </section>
 
-    <section id="meals-id">
-        <div class="container-meals">
+    <section id="meals-cat">
+        <h1 id="food-cat">Food Categories</h1>
+        <div class="container-categories">
             <div class="meal">
                 <img src="../assets/soup.jpg" alt="Soups and stews image">
-                <h3>Banga soup</h3>
-                <p>Category: <a href="categories.html#soups">Soups & Stews</a></p>
+                <p><a href="#soups">Soups & Stews</a></p>
             </div>
             <div class="meal">
                 <img src="../assets/rice.jpg" alt="Rice dishes image">
-                <h3>White rice</h3>
-                <p>Category: <a href="categories.html#rice">Rice dishes</a></p>
+                <p><a href="#rice">Rice dishes</a></p>
             </div>
             <div class="meal">
                 <img src="../assets/drinks.jpg" alt="Soft drinks image">
-                <h3>Coca cola</h3>
-                <p>Category: <a href="categories.html#soft-drinks">Soft drinks</a></p>
+                <p><a href="#soft-drinks">Soft drinks</a></p>
+            </div>
+        </div>
+        <div class="container-categories">
+            <div class="meal">
+                <img src="../assets/drinks.jpg" alt="Soft drinks image">
+                <p>Category: <a href="#soups">Soft drinks</a></p>
+            </div>
+            <div class="meal">
+                <img src="../assets/soup.jpg" alt="Soups image">
+                <p>Category: <a href="#rice">Soups dishes</a></p>
+            </div>
+            <div class="meal">
+                <img src="../assets/rice.jpg" alt="Rice image">
+                <p>Category: <a href="#soft-drinks">Rice dishes</a></p>
             </div>
         </div>
     </section>
