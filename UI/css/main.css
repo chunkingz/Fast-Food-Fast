@@ -23,6 +23,16 @@ ul {
     color: #fff;
 }
 
+.btn-checkout {
+    height: 58px;
+    width: 100%;
+    background: #ff4081;
+    border: 0;
+    margin-bottom: 50px;
+    padding: 0 20px 0 20px;
+    color: #fff;
+}
+
 header {
     background-color: #8b97db;
     color: aliceblue;
@@ -113,10 +123,20 @@ header a:hover {
     text-align: center;
 }
 
+.class-add-new-cat {
+    display: flex;
+}
+
 #id-add-new-cat {
     padding: 15px;
     margin-top: 15px;
     margin-left: 5%;
+}
+
+#id-add-new-item {
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: 30%;
 }
 
 #id-add-new-cat input[type="text"] {
@@ -126,6 +146,29 @@ header a:hover {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: center;
+}
+
+#id-add-new-item input[type="text"] {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+@media(min-width: 900px) {
+    .container-meals,
+    .container-categories,
+    .container-order-history {
+        display: flex;
+        justify-content: space-between;
+    }
+    .container-meals .meal img,
+    .container-categories .meal img,
+    .container-order-history .meal img {
+        width: 80%;
+    }
 }
 
 #landing input[type="email"],
@@ -150,14 +193,14 @@ input[type="number"] {
 .container-categories,
 .container-order-history {
     max-width: 1440px;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 .container-meals .meal,
 .container-categories .meal,
 .container-order-history .meal {
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-sizing: border-box;
     text-align: center;
     flex-basis: 30%;
@@ -167,6 +210,7 @@ input[type="number"] {
 .container-categories .meal img,
 .container-order-history .meal img {
     width: 30%;
+    height: 50%;
 }
 
 @media(min-width: 900px) {

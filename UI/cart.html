@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fast Food Fast | Categories</title>
+    <title>Fast Food Fast | Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="js/main.js"></script>
@@ -23,8 +23,8 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li class="current"><a href="categories.html">Categories</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li class="current"><a href="cart.html">Cart</a></li>
                     <li><a href="order_history.html">View Order History</a></li>
                     <li><a href="../index.html">Log Out</a></li>
                 </ul>
@@ -32,37 +32,30 @@
         </div>
     </header>
 
-    <section id="meals-cat">
-        <h1 id="food-cat">Food Categories</h1>
-        <div class="container-categories">
+    <section id="meals">
+        <h1 id="order-history-cat">Cart</h1>
+        <div class="container-order-history">
             <div class="meal">
                 <img src="assets/soup.jpg" alt="Soups and stews image">
-                <p><a href="#soups">Soups & Stews</a></p>
+                <h3>Banga soup <small>N350/portion</small> </h3>
+                <p>Category: <a href="categories.html#soups">Soups & Stews</a></p>
             </div>
             <div class="meal">
                 <img src="assets/rice.jpg" alt="Rice dishes image">
-                <p><a href="#rice">Rice dishes</a></p>
+                <h3>White rice <small>N250/portion</small> </h3>
+                <p>Category: <a href="categories.html#rice">Rice dishes</a></p>
             </div>
             <div class="meal">
                 <img src="assets/drinks.jpg" alt="Soft drinks image">
-                <p><a href="#soft-drinks">Soft drinks</a></p>
-            </div>
-        </div>
-        <div class="container-categories">
-            <div class="meal">
-                <img src="assets/drinks.jpg" alt="Soft drinks image">
-                <p>Category: <a href="#soups">Soft drinks</a></p>
-            </div>
-            <div class="meal">
-                <img src="assets/soup.jpg" alt="Soups image">
-                <p>Category: <a href="#rice">Soups dishes</a></p>
-            </div>
-            <div class="meal">
-                <img src="assets/rice.jpg" alt="Rice image">
-                <p>Category: <a href="#soft-drinks">Rice dishes</a></p>
+                <h3>Coca cola <small>N200 (35cl) </small> </h3>
+                <p>Category: <a href="categories.html#soft-drinks">Soft drinks</a></p>
             </div>
         </div>
     </section>
+
+    <form action="index.html" method="">
+        <button type="submit" class="btn-checkout" id="btn-checkout" onclick="checkout()">Checkout</button>
+    </form>
 
     <section id="newsletter">
         <div class="container">
