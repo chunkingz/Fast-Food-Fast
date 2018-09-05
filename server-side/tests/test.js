@@ -9,19 +9,19 @@ const should = chai.should();
 
 const newUserOrder = {
     name: 'Fortune King',
-    email: 'email@email.com',
-    meal: 'egusi soup',
+    email: 'kingstonfortune@gmail.com',
+    meal: 'rice',
     quantity: 1,
-    price: 800,
+    price: 200,
     location: 'Lekki, Lagos',
 }
 
 const invalidUserOrder = {
     name: 'John Doe',
-    email: 'email@email.com',
-    meal: 'rice and beans',
-    quantity: 1,
-    price: 800,
+    email: 'john@doe.com',
+    meal: 'egusi soup',
+    quantity: 2,
+    price: 400,
     location: 'Lagos',
 }
 
@@ -46,7 +46,27 @@ const emptyStatus = '';
 
 describe('Fast-Food-Fast Test Suite', () => {
 
-    // ==== Place a new order ==== //
+    // Place a new order
+
+    // Get homepage
+    describe(' GET /api/v1', () => {
+        it('should return welcome page on visit to /api/v1', (done) => {
+            chai.request(app)
+                .get('/')
+                .end((err, res) => {
+                    if (err) throw err;
+                    res.status.should.equal(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('status');
+                    res.body.should.have.property('message');
+                    res.body.status.should.be.a('string');
+                    res.body.status.should.equal('success');
+                    res.body.message.should.be.a('string');
+                    res.body.message.should.equal('Welcome to the Fast-Food-Fast API');
+                    done();
+                });
+        });
+    });
 
     describe(' POST /orders', () => {
         it('should place a new order', (done) => {
@@ -129,9 +149,9 @@ describe('Fast-Food-Fast Test Suite', () => {
     });
 
 
-    // ==== Get all orders ==== //
+    // Get all orders
     describe(' GET /orders', () => {
-        it('should list all orders', (done) => {
+        it('should fetch all orders', (done) => {
             chai.request(app)
                 .get('/api/v1/orders?user_type=admin')
                 .end((err, res) => {
@@ -139,20 +159,21 @@ describe('Fast-Food-Fast Test Suite', () => {
                     res.status.should.equal(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('status');
+                    res.body.should.have.property('message');
                     res.body.should.have.property('data');
                     res.body.status.should.be.a('string');
+                    res.body.message.should.be.a('string');
                     res.body.data.should.be.a('object');
                     res.body.status.should.equal('success');
-                    res.body.data.message.should.be.a('string');
+                    res.body.message.should.equal('Here are the orders');
                     res.body.data.orders.should.be.a('array');
-                    res.body.data.message.should.equal('Here are all the available orders.');
                     done();
                 });
         });
     });
 
     describe(' GET /orders', () => {
-        it('should fail on user not an admin', (done) => {
+        it('should fail on user not admin', (done) => {
             chai.request(app)
                 .get('/api/v1/orders?user_type=user')
                 .end((err, res) => {
@@ -160,17 +181,19 @@ describe('Fast-Food-Fast Test Suite', () => {
                     res.status.should.equal(403);
                     res.body.should.be.a('object');
                     res.body.should.have.property('status');
+                    res.body.should.have.property('message');
                     res.body.should.have.property('data');
                     res.body.status.should.be.a('string');
+                    res.body.message.should.be.a('string');
                     res.body.data.should.be.a('object');
                     res.body.status.should.equal('fail');
-                    res.body.data.message.should.equal('Sorry, only an admin can access this endpoint');
+                    res.body.message.should.equal('Access denied!, you are not admin');
                     done();
                 });
         });
     });
 
-    // ==== Fetch a specific order ==== //
+    // Get a specific order
 
     describe(' GET /orders/<orderId>', () => {
         it('should fetch a specific order', (done) => {
@@ -187,7 +210,7 @@ describe('Fast-Food-Fast Test Suite', () => {
                     res.body.status.should.equal('success');
                     res.body.data.message.should.be.a('string');
                     res.body.data.order.should.be.a('object');
-                    res.body.data.message.should.equal('specific order returned, thank you.');
+                    res.body.data.message.should.equal('order returned');
                     done();
                 });
         });
@@ -196,7 +219,7 @@ describe('Fast-Food-Fast Test Suite', () => {
     describe(' GET /orders/<orderId>', () => {
         it('should not fetch a specific order', (done) => {
             chai.request(app)
-                .get('/api/v1/orders/2000?user_type=admin')
+                .get('/api/v1/orders/100?user_type=admin')
                 .end((err, res) => {
                     if (err) throw err;
                     res.status.should.equal(404);
@@ -207,13 +230,13 @@ describe('Fast-Food-Fast Test Suite', () => {
                     res.body.data.should.be.a('object');
                     res.body.status.should.equal('fail');
                     res.body.data.message.should.be.a('string');
-                    res.body.data.message.should.equal('Sorry, order with id => 2000, not found');
+                    res.body.data.message.should.equal('Error!, order with id => 100, not found');
                     done();
                 });
         });
     });
 
-    // ==== Update the status of an order ==== //
+    // Update the status of an order
 
     describe(' PUT /orders', () => {
         it('should update the status of an order', (done) => {
@@ -241,7 +264,7 @@ describe('Fast-Food-Fast Test Suite', () => {
     describe(' PUT /orders', () => {
         it('should not update the status of an order', (done) => {
             chai.request(app)
-                .put('/api/v1/orders/2000?user_type=admin')
+                .put('/api/v1/orders/100?user_type=admin')
                 .send(statusToUpdateTo)
                 .end((err, res) => {
                     if (err) throw err;
@@ -253,7 +276,7 @@ describe('Fast-Food-Fast Test Suite', () => {
                     res.body.data.should.be.a('object');
                     res.body.status.should.equal('fail');
                     res.body.data.message.should.be.a('string');
-                    res.body.data.message.should.equal('Sorry, order with id => 2000, not found');
+                    res.body.data.message.should.equal('Error!, order with id => 100, not found');
                     done();
                 });
         });
@@ -279,28 +302,7 @@ describe('Fast-Food-Fast Test Suite', () => {
         });
     });
 
-    // ==== Homepage ==== //
-    describe(' GET /api/v1', () => {
-        it('should return welcome page on visit to /api/v1', (done) => {
-            chai.request(app)
-                .get('/api/v1')
-                .end((err, res) => {
-                    if (err) throw err;
-                    res.status.should.equal(200);
-                    res.body.should.be.a('object');
-                    res.body.should.have.property('status');
-                    res.body.should.have.property('data');
-                    res.body.status.should.be.a('string');
-                    res.body.data.should.be.a('object');
-                    res.body.status.should.equal('success');
-                    res.body.data.message.should.be.a('string');
-                    res.body.data.message.should.equal('Welcome to Fast-Food-Fast API, the most delicious API in the world');
-                    done();
-                });
-        });
-    });
-
-    // ==== 404 ==== //
+    // 404 Not Found
     describe(' GET /*', () => {
         it('should return 404 if the page is not found', (done) => {
             chai.request(app)
