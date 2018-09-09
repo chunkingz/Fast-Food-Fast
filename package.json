@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "mocha",
-        "start": "app.js --exec babel-node"
+        "start": "babel-node app.js"
     },
     "author": "chunkingz",
     "license": "MIT",
