@@ -1,5 +1,5 @@
-import express from 'express';
-import db from '../db/orders-db.js';
+const express = require('express');
+const db = require('../db/orders-db.js');
 
 // import  { newOrder, allOrders, specificOrder, updateStatus, homePage, notFoundPage } from '../controllers/index';
 import { pageNotFound, homepageController, allOrdersController, newOrderController, singleOrderController, updateOrderStatusController } from '../controllers/index';
