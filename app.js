@@ -1,5 +1,5 @@
-import express from '../node_modules/express';
-import bodyParser from "../node_modules/body-parser";
+import express from 'express';
+import bodyParser from "body-parser";
 const app = express();
 
 import router from './server-side/routes/routes.js';
