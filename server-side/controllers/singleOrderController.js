@@ -16,7 +16,15 @@ class singleOrderController {
                 });
             }
         });
-        return res.status(404).send({
+        const id1 = req.params.id;
+            if (typeof(id1) != 'number') {
+                return res.status(400).send({
+                    success: 'false',
+                    message: 'order does not exist'
+                });
+            }
+
+        return res.status(400).send({
             success: 'false',
             message: `order does not exist`
         });
