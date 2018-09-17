@@ -1,6 +1,11 @@
 import ordersArray from '../db/orders-db.js';
 import usersArray from '../db/users-db.js';
 
+// Notes for my offline...
+// 400 bad request, server unable to process request sent by client due to invalid sytax
+// 401 unauthorized error, like bad username and password
+// 500 internal server error
+
 // Create new order
 class newOrderController {
 
@@ -29,7 +34,8 @@ class newOrderController {
             emailArray.push(obj.email);
         });
 
-        // User email in emailArray, make order
+        // check if the email received exists in db
+        // if it does we can accept the order.
         if (emailArray.includes(email)) {
 
             // Insert new order into ordersArray
@@ -50,17 +56,46 @@ class newOrderController {
 
             // show success msg on order place
             return res.status(201).json({
-                success: true,
+                success: 'true',
                 message: 'Your order is being processed.'
             });
         }
 
-        // User email not in emailArray, dont make order
-        return res.status(404).json({
-            success: false,
-            message: 'Error!, user not found, order can not be placed'
-        });
+        if(!req.body.meal){
+            return res.status(400).json({
+                success: 'false',
+                message: 'You have to place an order for something'
+            });
+        }
+        
+        if(quantity.length <= 0){
+            return res.status(400).json({
+                success: 'false',
+                message: 'Please provide the quantity of items'
+            });
+        }
+        
+        if(price.length <= 0){
+            return res.status(400).json({
+                success: 'false',
+                message: 'Price cannot be empty'
+            });
+        }
+        
+        if(typeof(quantity) !== Number || typeof(price) !== Number){
+            return res.status(400).json({
+                success: 'false',
+                message: 'Quantity/Price has to be a number'
+            });
+        }
+        
 
+        // User email not in emailArray, dont make order
+        return res.status(401).json({
+            success: false,
+            message: 'unauthorized user, please sign up'
+        });
+        
     }
 
 }

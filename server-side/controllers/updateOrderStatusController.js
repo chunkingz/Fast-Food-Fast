@@ -54,5 +54,4 @@ class updateOrderStatusController {
 
 }
 
-// Export updateStatus
 export default updateOrderStatusController;

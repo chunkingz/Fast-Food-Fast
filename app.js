@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 
 // start server on port
-const server = app.listen(process.env.PORT || 3000, function() {
+const server = app.listen(process.env.PORT || 30005, function() {
     console.log("Fast Food Fast app running on port.", server.address().port);
 });
+
+module.exports = server;
