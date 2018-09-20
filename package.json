@@ -4,7 +4,7 @@
     "description": "This is the fast food fast api developed for andela cycle 36.",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon --exec babel-node app.js",
+        "start": "babel-node app.js",
         "dev": "nodemon app.js --exec babel-node",
         "lint": "eslint ./ --fix",
         "test": "mocha --require @babel/register ./server-side/test",
