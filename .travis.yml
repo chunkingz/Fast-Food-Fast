@@ -1,0 +1,16 @@
+language: node_js
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "62a598f8-e930-4827-a756-f5c541862ba8"
+
+node_js: 
+  - node
+
+cache: 
+  directories: 
+    - "node_modules"
+
+after_success: 
+   - npm run coverage
