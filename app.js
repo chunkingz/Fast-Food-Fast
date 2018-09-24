@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from "body-parser";
 const app = express();
 
-import router from './server-side/routes/routes.js';
+import router from './server/routes/routes.js';
 
 // define middlewares
 app.use(bodyParser.json());
