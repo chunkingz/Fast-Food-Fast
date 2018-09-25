@@ -1,85 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fast Food Fast | Admin - List Orders</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
-    <script src="../js/main.js"></script>
-    <meta name="description" content="Affordable meals Delivered to you in a blink">
-    <meta name="keywords" content="Fast food, Affordable meals, Quick Delivery, online restaurant">
-    <meta name="author" content="Fortune King">
+	<title>Fast Food Fast | List Orders</title>
+	<meta name= viewport content= "width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <div id="logo">
-                <h1>Fast Food Fast - Admin</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="list_orders.html">Home</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="../index.html">Log Out</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+	<header>
+		<nav>
+			<div class="row clearfix">
+				<img src="images/Andela400.png" class="img-logo">
+				<!-- <div class="logo">Fast Food Fast</div> -->
 
-    <section id="landing">
-        <div class="container">
-            <h1>List Orders</h1>
-            <p>You can Accept, Decline, or mark as completed.</p>
-        </div>
-    </section>
+				<ul class="main-nav animated slideInDown" id="check-class">
+					<li><a href="admin.html">HOME</a></li>
+					<li><a href="accepted_orders.html">ACCEPTED ORDERS </a></li>
+					<li><a href="declined_orders.html">DECLINED ORDERS</a></li>
+					<li><a href="completed_orders.html">COMPLETED ORDERS</a></li>
+					<li><a href="index.html">LOGOUT</a></li>
+				</ul>
+				<a href="#" class="mobile-icon"  onclick="slideshow()"> <i class="fa fa-bars"></i> </a>
+			</div>
+		</nav>
 
-    <section id="meals-id">
-        <div class="container-meals">
-            <div class="meal">
-                <img src="../assets/soup.jpg" alt="Soups and stews image">
-                <h3>Banga soup</h3>
-                <button type="submit" class="btn-submit">Accept</button>
-                <button type="submit" class="btn-submit">Decline</button><br>
-                <button type="submit" class="btn-submit">Mark as completed</button>
-                <p>Category: <a href="categories.html#soups">Soups & Stews</a></p>
-            </div>
-            <div class="meal">
-                <img src="../assets/rice.jpg" alt="Rice dishes image">
-                <h3>White rice</h3>
-                <button type="submit" class="btn-submit">Accept</button>
-                <button type="submit" class="btn-submit">Decline</button><br>
-                <button type="submit" class="btn-submit">Mark as completed</button>
-                <p>Category: <a href="categories.html#rice">Rice dishes</a></p>
-            </div>
-            <div class="meal">
-                <img src="../assets/drinks.jpg" alt="Soft drinks image">
-                <h3>Coca cola</h3>
-                <button type="submit" class="btn-submit">Accept</button>
-                <button type="submit" class="btn-submit">Decline</button><br>
-                <button type="submit" class="btn-submit">Mark as completed</button>
-                <p>Category: <a href="categories.html#soft-drinks">Soft drinks</a></p>
-            </div>
-        </div>
-    </section>
+		<div class="main-content-header">
+			<h1> LIST OF ALL ORDERS</h1>
+		</div>
+	</header>
 
-    <section id="newsletter">
-        <div class="container">
-            <h3>Subscribe to our newsletter today to get informed of discounts and hottest deals</h3>
-            <form action="" method="">
-                <input type="email" placeholder="Your email...">
-                <button type="submit" class="btn-submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
+	<script type="text/javascript">
+		
+		function slideshow(){
+			 var x = document.getElementById('check-class');
+			 if(x.style.display === "none"){
+			 	x.style.display="block";
+			 }else{
+			 	x.style.display="none";
+			 }
+		}	
 
-    <footer>
-        <p>Fast Food Fast &trade;. Copyright all rights reserved, 2018.</p>
-    </footer>
+	</script>
 
 </body>
-
 </html>
