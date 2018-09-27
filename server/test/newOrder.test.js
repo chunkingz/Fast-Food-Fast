@@ -8,7 +8,7 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
 
   describe('POST /api/v1/orders/', () => {
 
-    it('should post an order', (done) => {
+    it('should create a new order', (done) => {
       const order = {
         name: 'Fortune King',
         email: 'kingstonfortune@gmail.com',
@@ -17,6 +17,7 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         price: 200,
         location: ''
       };
+      
       chai.request(app)
         .post('/api/v1/orders')
         .send(order)
@@ -30,15 +31,14 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         });
     });
 
-    it('should not post an order if meal is not provided', (done) => {
+    it('should not create an order if meal is not provided', (done) => {
       const order = {
-        id: 1,
-        fullname: 'Fortune King',
-        userId: 1,
-        userTelephone: '+2349039933771',
-        address: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
+        name: 'Fortune King',
+        email: 'kingstonfortune@gmail.com',
+        meal: '',
         quantity: 1,
         price: 200,
+        location: ''
       };
       chai.request(app)
         .post('/api/v1/orders')
@@ -53,16 +53,14 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         });
     });
 
-    it('should not post an order if quantity is not provided', (done) => {
+    it('should not create an order if quantity is not provided', (done) => {
       const order = {
-        id: 1,
-        fullname: 'Fortune King',
-        userId: 1,
-        userTelephone: '+2349039933771',
-        address: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
+        name: 'Fortune King',
+        email: 'kingstonfortune@gmail.com',
         meal: 'rice and stew',
         quantity: '',
         price: 200,
+        location: ''
       };
       chai.request(app)
         .post('/api/v1/orders')
@@ -77,16 +75,14 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         });
     });
 
-    it('should not post an order if quantity is not a number', (done) => {
+    it('should not create an order if quantity is not a number', (done) => {
       const order = {
-        id: 1,
-        fullname: 'Fortune King',
-        userId: 1,
-        userTelephone: '+2349039933771',
-        address: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
+        name: 'Fortune King',
+        email: 'kingstonfortune@gmail.com',
         meal: 'rice and stew',
-        quantity: 'abc',
+        quantity: 'aza',
         price: 200,
+        location: ''
       };
       chai.request(app)
         .post('/api/v1/orders')
@@ -101,16 +97,14 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         });
     });
 
-    it('should not post an order if price is not provided', (done) => {
+    it('should not create an order if price is not provided', (done) => {
       const order = {
-        id: 1,
-        fullname: 'Fortune King',
-        userId: 1,
-        userTelephone: '+2349039933771',
-        address: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
+        name: 'Fortune King',
+        email: 'kingstonfortune@gmail.com',
         meal: 'rice and stew',
         quantity: 1,
         price: '',
+        location: ''
       };
       chai.request(app)
         .post('/api/v1/orders')
@@ -125,16 +119,14 @@ describe('Fast-Food-Fast suite to test for add new Order', () => {
         });
     });
 
-    it('should not post an order if price is not a number', (done) => {
+    it('should not create an order if price is not a number', (done) => {
       const order = {
-        id: 1,
-        fullname: 'Fortune King',
-        userId: 1,
-        userTelephone: '+2349039933771',
-        address: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
+        name: 'Fortune King',
+        email: 'kingstonfortune@gmail.com',
         meal: 'rice and stew',
         quantity: 1,
-        price: 'abc',
+        price: 'aza',
+        location: ''
       };
       chai.request(app)
         .post('/api/v1/orders')

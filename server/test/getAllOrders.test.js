@@ -15,7 +15,7 @@ describe('Fast-Food-Fast suite to test for get all Orders', () => {
                 expect(res.type).to.equal('application/json');
                 expect(res.body).to.be.an('object');
                 expect(res.body.message).to.equal('Here are the orders');
-                expect(res.body.data).to.be.an('object');
+                expect(res.body.res1).to.be.an('array');
                 done();
               });
           });
