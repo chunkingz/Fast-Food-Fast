@@ -111,7 +111,7 @@ const Order = {
       });
     })
     .catch((err) => {
-      console.err(`Error: `, err);
+      console.log(`Error: `, err);
     })
   }
   ,
