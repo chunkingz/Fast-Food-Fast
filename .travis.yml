@@ -41,8 +41,8 @@ env:
     - PGPASSWORD='toor'
     - DATABASE_URL='postgres://postgres:toor@localhost:5432/Fast Food Fast'
 before_script:
-  - psql -c "CREATE USER ${PGUSER} ENCRYPTED PASSWORD '${PGPASSWORD}';"
-  - psql -c "CREATE DATABASE ${PGDATABASE} WITH OWNER = ${PGUSER};"
+  - psql -c "CREATE USER PGUSER ENCRYPTED PASSWORD PGPASSWORD"
+  - psql -c "CREATE DATABASE PGDATABASE WITH OWNER = PGUSER"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 5 # give xvfb some time to start
