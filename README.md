@@ -2,16 +2,16 @@
 
 # Fast Food Fast - development branch
 
- # API documentation on Postman
+ ### API documentation on Postman
  https://documenter.getpostman.com/view/5475615/RWgjYMFZ
  
- # Github pages
+ ### Github pages
  https://chunkingz.github.io/Fast-Food-Fast/
  
- # Pivotal Tracker
+ ### Pivotal Tracker
  https://www.pivotaltracker.com/n/projects/2194237
  
- # Heroku API endpoints
+ ### Heroku API endpoints
  https://fast-food-fast-andela.herokuapp.com/
  
  
