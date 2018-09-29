@@ -7,6 +7,24 @@
 	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
@@ -27,10 +45,66 @@
 			</div>
 		</nav>
 
-		<div class="main-content-header">
+		<!-- <div class="main-content-header">
 			<h1> View your cart</h1>
-		</div>
+		</div> -->
 	</header>
+
+	<h1 id="order-menu">Your Cart</h1>
+
+	<div class="flex-container">
+		<table>
+			<tr>
+				<th>S/N</th>
+				<th>MEAL</th>
+				<th>PRICE</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>White Rice</td>
+				<td>#500</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Banga Soup</td>
+				<td>#700</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Coke</td>
+				<td>#250</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Beef</td>
+				<td>#200</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th></th>
+				<th>PRICE TOTAL:</th>
+				<th id='total'>#1,650 <button class="btnCheckout" onclick="window.location.href='checkout.html'">checkout</button></th>
+			</tr>
+		</table>
+	</div>
+
+	<footer>
+		<p>Fast Food Fast <sup>&copy;</sup> 2018, All rights reserved</p>
+	</footer>
 
 	<script type="text/javascript">
 		

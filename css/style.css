@@ -30,7 +30,7 @@ body{
     top: -50px;
     left: calc(50% - 50px);
 }
-img:hover{
+img.avatar:hover{
     animation: shake 0.5s;
     animation-iteration-count: infinite;
 }
@@ -82,7 +82,7 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #3260DA;
+    background: #D02126;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -90,7 +90,7 @@ h1{
 .loginbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background: #bf55ec;
+    background: #C29C5D;
     color: #000;
 }
 .loginbox a{
@@ -102,7 +102,7 @@ h1{
 
 .loginbox a:hover
 {
-    color: #bf55ec;
+    color: #C29C5D;
 }
 
 
