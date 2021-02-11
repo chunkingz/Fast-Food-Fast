@@ -11,15 +11,15 @@ describe('Fast-Food-Fast Update order test suite',() => {
         it('should update an order', (done) => {
 
             const order = {
-                id: 1,
-                name: 'Fortune King',
-                email: 'kingstonfortune@gmail.com',
-                meal: 'rice and stew',
-                quantity: 1,
-                price: 200,
-                location: '18b Toyosi Adetoro street, chevy view, lekki, lagos',
-                created_at: '',
-                status: 'pending',
+              "name": "ded",
+              "email": "sdesw",
+              "meal": "rice and stew",
+              "quantity": "2",
+              "price": "1",
+              "location": "lagos",
+              "status": "",
+              "createdDate": 1537927989981,
+              "modifiedDate": 1537927989981
               };
 
           chai.request(app)

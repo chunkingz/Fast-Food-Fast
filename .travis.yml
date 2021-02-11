@@ -14,3 +14,41 @@ cache:
 
 after_success: 
    - npm run coveralls
+
+postgres:
+  - adapter: postgresql
+  - database: 'Fast Food Fast'
+  - username: postgres
+  - password: toor
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database orders;' -U postgres
+
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+    - PGPORT=5432
+    - PGDATABASE='Fast Food Fast'
+    - PGUSER='postgres'
+    - PGPASSWORD='toor'
+    - DATABASE_URL='postgres://postgres:toor@localhost:5432/Fast Food Fast'
+before_script:
+  - psql -c "CREATE USER PGUSER ENCRYPTED PASSWORD PGPASSWORD"
+  - psql -c "CREATE DATABASE PGDATABASE WITH OWNER = PGUSER"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 5 # give xvfb some time to start
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+  - tar zxvf geckodriver-v0.21.0-linux64.tar.gz
+  - rm geckodriver-v0.21.0-linux64.tar.gz
+  - sudo mv -f geckodriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/geckodriver
+  - sudo ln -s /usr/local/share/geckodriver /usr/local/bin/geckodriver
